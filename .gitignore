@@ -1,4 +1,4 @@
-/env
+/venv
 /app/accounts/migrations/
 __pycache__/
 /app/info/migrations/
