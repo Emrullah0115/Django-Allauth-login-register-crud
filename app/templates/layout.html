@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Proje</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+        <!-- App css -->
+        <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+        {% block css_files %}{% endblock css_files %}
+    </head>
+
+<body>
+    {% include "partials/_nav.html" %}
+
+
+
+
+
+    
+    {% block container %}
+
+    {% endblock container %}
+
+    {% include "partials/_footer.html" %}
+
+    
+
+    <script src="{% static "assets/js/vendor.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/jquery.dataTables.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/dataTables.bootstrap4.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/dataTables.responsive.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/responsive.bootstrap4.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/dataTables.buttons.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/buttons.bootstrap4.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/buttons.html5.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/buttons.flash.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/buttons.print.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/dataTables.keyTable.min.js" %}"></script>
+    <script src="{% static "assets/libs/datatables/dataTables.select.min.js" %}"></script>
+    <script src="{% static "assets/libs/pdfmake/pdfmake.min.js" %}"></script>
+    <script src="{% static "assets/libs/pdfmake/vfs_fonts.js" %}"></script>
+    <!-- third party js ends -->
+    <script src="{% static "assets/libs/jquery-knob/jquery.knob.min.js" %}"></script>
+    <script src="{% static "assets/libs/peity/jquery.peity.min.js" %}"></script>
+
+<!-- Sparkline charts -->
+<script src="{% static "assets/libs/jquery-sparkline/jquery.sparkline.min.js" %}"></script>
+
+<!-- init js -->
+<script src=" {% static "assets/js/pages/dashboard-1.init.js" %}"></script>
+
+<!-- Datatables init -->
+<script src="{% static "assets/js/pages/datatables.init.js" %}"></script>
+
+<!-- App js -->
+<script src="{% static "assets/js/app.min.js" %}"></script>
+
+{% block js_files %}
+    
+{% endblock js_files %}
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,4 @@
+/env
+/app/accounts/migrations/
+__pycache__/
+/app/info/migrations/

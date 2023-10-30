@@ -1,0 +1,116 @@
+{% load static %}
+
+
+
+    {% if user.is_authenticated %}
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <!-- Topbar Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <ul class="list-unstyled topnav-menu float-right mb-0">
+
+                        <li class="dropdown notification-list">
+                            
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle nav-link">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </li>
+
+                        <li class="d-none d-sm-block">
+                            <form class="app-search" action="{% url "search" %}">
+                                <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="submit">
+                                                <i class="fe-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                        
+                       
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="{% static "assets/images/users/avatar-1.jpg" %}" alt="user-image" class="rounded-circle">
+                                <span class="pro-user-name ml-1">
+                                    {{user.username}} <i class="mdi mdi-chevron-down"></i> 
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">Welcome {{ user.username }}</h6>
+                                </div>
+
+                                <!-- item-->
+                               
+                                <!-- item-->
+
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    
+                                    <form method="post" action="{% url 'account_logout' %}">
+                                        {% csrf_token %}
+                                        {% if redirect_field_value %}
+                                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                                        {% endif %}
+                                        <span><i class="mdi mdi-logout"></i><button class="btn btn-outline-primary" type="submit">Logout</button></span>
+                                       
+                                      </form>
+                                    
+                                </a>
+
+                            </div>
+                        </li>
+                                   
+                    </ul>
+                    
+                    <!-- LOGO -->
+                    <div class="logo-box">
+                        <a href="index.html" class="logo text-center">
+                            <span class="logo-lg">
+                                <img src="assets/images/logo-light.png" alt="" height="20">
+                                <!-- <span class="logo-lg-text-light">Xeria</span> -->
+                            </span>
+                            <span class="logo-sm">
+                                <!-- <span class="logo-sm-text-dark">X</span> -->
+                                <img src="assets/images/logo-sm.png" alt="" height="24">
+                            </span>
+                        </a>
+                    </div>
+
+                    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                        <li class="dropdown d-none d-lg-block">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                Create New
+                                <i class="mdi mdi-chevron-down"></i> 
+                            </a>
+                            <div class="dropdown-menu">
+                                <!-- item-->
+                                <a href="{% url "list" %}" class="dropdown-item">
+                                    <i class="fe-briefcase mr-1"></i>
+                                    <span>List</span>
+                                </a>
+                                <!-- item-->
+                                <a href="{% url "create" %}" class="dropdown-item">
+                                    <i class="fe-user mr-1"></i>
+                                    <span>Create Employeess</span>
+                                </a>
+                            </div>
+                        </li>
+                    <div class="clearfix"></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
